@@ -19,14 +19,6 @@
         <jdbc:script location="classpath:insert-data.sql"/>
     </jdbc:embedded-database>
 
-    <!-- 使用In-Memory之外的方式，才需要設定下面這段
-    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="org.h2.Driver" />
-        <property name="url" value="jdbc:h2:~/testdb" />
-        <property name="username" value="mission" />
-        <property name="password" value="password" />
-    </bean> -->
-
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate" >
         <constructor-arg ref="dataSource" />
     </bean>
