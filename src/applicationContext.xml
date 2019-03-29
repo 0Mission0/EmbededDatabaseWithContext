@@ -12,9 +12,11 @@
 ">
 	<context:component-scan base-package="idv.mission.example" />
 
-	<!-- Another way To build dataSource -->
-	<!-- <jdbc:embedded-database id="dataSource" type="H2"> <jdbc:script location="classpath:create-db.sql"/> 
-		<jdbc:script location="classpath:insert-data.sql"/> </jdbc:embedded-database> -->
+	<!-- Another way To build dataSource. Without url, it's hard to check the db content in mem. -->
+	<!-- <jdbc:embedded-database id="dataSource" type="H2">
+		<jdbc:script location="classpath:create-db.sql" />
+		<jdbc:script location="classpath:insert-data.sql" />
+	</jdbc:embedded-database> -->
 
 	<!-- https://stackoverflow.com/questions/17327853/specify-url-of-jdbcembedded-database -->
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
